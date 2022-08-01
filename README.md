@@ -1,5 +1,5 @@
 # Geoweather
-  Geoweather is a weather forecast application for HUAWEI devices. Unlike other forecast apps Geoweather uses geographic coordination as an input to forecast weather. Geoweather uses OpenWeatherMap API to weather forecast data.
+  Geoweather is a weather forecast application for HUAWEI devices. Unlike other forecast apps Geoweather uses geographic coordination as an input to forecast weather. Geoweather uses [OpenWeatherMap API](https://openweathermap.org/api) to weather forecast data.
 
 # Purpose of the Project
   The main focus in this project was improve my MVVM architecture knowledge and learn some of the important programming techniques: dependency injection, coroutines, etc. This project **is NOT focused on UI Design**.
