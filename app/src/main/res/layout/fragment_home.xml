@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/secondary_color"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragment_home_connected_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/top_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="220sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/place_tv"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textColor="@color/primary_color"
+                android:textSize="@dimen/text_size_40sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/degree_tv"
+                android:textColor="@color/primary_color"
+                android:textSize="@dimen/text_size_30sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <View
+            style="@style/Divider"
+            android:id="@+id/top_divider"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/top_linear_layout"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/hourly_recycler_view"
+            tools:listitem="@layout/hourly_weather"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="@dimen/margin_10sp"
+            app:layout_constraintTop_toBottomOf="@id/top_divider"
+            android:orientation="horizontal"
+            android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:overScrollMode="ifContentScrolls"
+            android:layout_height="wrap_content" />
+
+        <View
+            style="@style/Divider"
+            android:id="@+id/bottom_divider"
+            android:layout_marginTop="@dimen/margin_10sp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/hourly_recycler_view"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/daily_recycler_view"
+            tools:listitem="@layout/daily_weather"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:paddingTop="@dimen/padding_20sp"
+            android:layout_marginHorizontal="@dimen/margin_10sp"
+            app:layout_constraintTop_toBottomOf="@id/bottom_divider"
+            android:layout_weight="0.6"
+            android:orientation="vertical"
+            android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:overScrollMode="never"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/ButtonStyle"
+            android:id="@+id/map_button"
+            android:text="@string/map_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragment_error_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/error_text"
+            android:layout_width="match_parent"
+            android:textColor="@color/primary_color"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/try_again_button"
+            android:gravity="center" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/ButtonStyle"
+            android:id="@+id/try_again_button"
+            android:text="@string/check_connection_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
